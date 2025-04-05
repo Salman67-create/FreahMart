@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreshMart - Your Fresh Grocery Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="cart.js" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">FreshMart</div>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="nav-toggle-label">
+            <span></span>
+        </label>
+        <ul class="nav-links">
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">Vegetables</a></li>
+            <li><a href="#">Fruits</a></li>
+            <li><a href="#">Groceries</a></li>
+            <li><a href="#">Contact</a></li>
+            <li class="cart-icon" onclick="viewCart()">
+                🛒 <span id="cart-count">0</span>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button class="close-cart" onclick="closeCart()">×</button>
+        </div>
+        <div id="cart-items" class="cart-items">
+            <!-- Cart items will be dynamically added here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total">₹0</span>
+            </div>
+            <button class="checkout-button">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Fresh & Organic Groceries</h1>
+            <p>Delivered right to your doorstep</p>
+            <a href="#categories" class="cta-button">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Featured Categories -->
+    <section id="categories" class="categories">
+        <h2>Shop by Category</h2>
+        <div class="category-grid">
+            <a href="#vegetables" class="category-card vegetables">
+                <img src="vegetables.png" alt="Fresh Vegetables">
+                <h3>Vegetables</h3>
+                <p>Farm-fresh vegetables</p>
+            </a>
+            <a href="#fruits" class="category-card fruits">
+                <img src="freshfruits.png" alt="Fresh Fruits">
+                <h3>Fruits</h3>
+                <p>Seasonal fresh fruits</p>
+            </a>
+            <a href="#dryfruits" class="category-card groceries">
+                <img src="grocery.png" alt="Dry Fruits">
+                <h3>Dry Fruits</h3>
+                <p>Premium dry fruits</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section id="vegetables" class="featured-products">
+        <h2>Fresh Vegetables</h2>
+        <div class="products-grid">
+            <article class="product-card">
+                <img src="Organic Carrots.png" alt="Fresh Carrots">
+                <div class="product-info">
+                    <h3>Organic Carrots</h3>
+                    <p class="price">₹55/kg</p>
+                </div>
+                <div class="product-actions">
+                    <button class="add-to-cart" onclick="addToCart('Organic Carrots', 55, 'Organic Carrots.png')">Add to Cart</button>
+                    <a href="product.html" class="view-product">View Details</a>
+                </div>
+            </article>
+            <article class="product-card">
+                <img src="Fresh Potatoes.png" alt="Fresh Potatoes">
+                <div class="product-info">
+                    <h3>Fresh Potatoes</h3>
+                    <p class="price">₹35/kg</p>
+                </div>
+                <div class="product-actions">
+                    <button class="add-to-cart" onclick="addToCart('Fresh Potatoes', 35, 'Fresh Potatoes.png')">Add to Cart</button>
+                    <a href="product.html" class="view-product">View Details</a>
+                </div>
+            </article>
+            <article class="product-card">
+                <img src="Fresh Tomatoes.png" alt="Fresh Tomatoes">
+                <div class="product-info">
+                    <h3>Fresh Tomatoes</h3>
+                    <p class="price">₹40/kg</p>
+                </div>
+                <div class="product-actions">
+                    <button class="add-to-cart" onclick="addToCart('Fresh Tomatoes', 40, 'Fresh Tomatoes.png')">Add to Cart</button>
+                    <a href="product.html" class="view-product">View Details</a>
+                </div>
+            </article>
+            <article class="product-card">
+                <img src="Fresh Onions.jpg" alt="Fresh Onions">
+                <div class="product-info">
+                    <h3>Fresh Onions</h3>
+                    <p class="price">₹30/kg</p>
+                </div>
+                <div class="product-actions">
+                    <button class="add-to-cart" onclick="addToCart('Fresh Onions', 30, 'Fresh Onions.png')">Add to Cart</button>
+                    <a href="product.html" class="view-product">View Details</a>
+                </div>
+            </article>
+        </div>
+
+        <h2 id="fruits">Fresh Fruits</h2>
+        <div class="products-grid">
+            <article class="product-card">
+                <img src="fresh-mango-1000x1000.jpg" alt="Fresh Mango">
+                <div class="product-info">
+                    <h3>Fresh Mango</h3>
+                    <p class="price">₹120/kg</p>
+                </div>
+                <div class="product-actions">
+                    <button class="add-to-cart" onclick="addToCart('Fresh Mango', 120, 'mango.png')">Add to Cart</button>
+                    <a href="product.html" class="view-product">View Details</a>
+                </div>
+            </article>
+            <article class="product-card">
+                <img src="Sweet Oranges.webp" alt="Sweet Oranges">
+                <div class="product-info">
+                    <h3>Sweet Oranges</h3>
+                    <p class="price">₹80/kg</p>
+                </div>
+                <div class="product-actions">
+                    <button class="add-to-cart" onclick="addToCart('Sweet Oranges', 80, 'orange.png')">Add to Cart</button>
+                    <a href="product.html" class="view-product">View Details</a>
+                </div>
+            </article>
+            <article class="product-card">
+                <img src="Apples.webp" alt="Red Apples">
+                <div class="product-info">
+                    <h3>Red Apples</h3>
+                    <p class="price">₹160/kg</p>
+                </div>
+                <div class="product-actions">
+                    <button class="add-to-cart" onclick="addToCart('Red Apples', 160, 'apple.png')">Add to Cart</button>
+                    <a href="product.html" class="view-product">View Details</a>
+                </div>
+            </article>
+            <article class="product-card">
+                <img src="Kiwi-3_2048x.webp" alt="Fresh Kiwi">
+                <div class="product-info">
+                    <h3>Fresh Kiwi</h3>
+                    <p class="price">₹40/piece</p>
+                </div>
+                <div class="product-actions">
+                    <button class="add-to-cart" onclick="addToCart('Fresh Kiwi', 40, 'kiwi.png')">Add to Cart</button>
+                    <a href="product.html" class="view-product">View Details</a>
+                </div>
+            </article>
+        </div>
+
+        <h2>Premium Dry Fruits</h2>
+        <div class="products-grid">
+            <article class="product-card">
+                <img src="Premium Cashews.jpg" alt="Premium Cashews">
+                <div class="product-info">
+                    <h3>Premium Cashews</h3>
+                    <p class="price">₹900/kg</p>
+                </div>
+                <div class="product-actions">
+                    <button class="add-to-cart" onclick="addToCart('Premium Cashews', 900, 'cashews.png')">Add to Cart</button>
+                    <a href="product.html" class="view-product">View Details</a>
+                </div>
+            </article>
+            <article class="product-card">
+                <img src="California Almonds.jpg" alt="California Almonds">
+                <div class="product-info">
+                    <h3>California Almonds</h3>
+                    <p class="price">₹850/kg</p>
+                </div>
+                <div class="product-actions">
+                    <button class="add-to-cart" onclick="addToCart('California Almonds', 850, 'almonds.png')">Add to Cart</button>
+                    <a href="product.html" class="view-product">View Details</a>
+                </div>
+            </article>
+            <article class="product-card">
+                <img src="Golden Raisins.jpg" alt="Golden Raisins">
+                <div class="product-info">
+                    <h3>Golden Raisins</h3>
+                    <p class="price">₹400/kg</p>
+                </div>
+                <div class="product-actions">
+                    <button class="add-to-cart" onclick="addToCart('Golden Raisins', 400, 'raisins.png')">Add to Cart</button>
+                    <a href="product.html" class="view-product">View Details</a>
+                </div>
+            </article>
+            <article class="product-card">
+                <img src="Roasted Pistachios.png" alt="Roasted Pistachios">
+                <div class="product-info">
+                    <h3>Roasted Pistachios</h3>
+                    <p class="price">₹1200/kg</p>
+                </div>
+                <div class="product-actions">
+                    <button class="add-to-cart" onclick="addToCart('Roasted Pistachios', 1200, 'pistachios.png')">Add to Cart</button>
+                    <a href="product.html" class="view-product">View Details</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="feature">
+            <span class="feature-icon">🚚</span>
+            <h3>Free Delivery</h3>
+            <p>On orders above ₹99</p>
+        </div>
+        <div class="feature">
+            <span class="feature-icon">🌱</span>
+            <h3>100% Organic</h3>
+            <p>Certified products</p>
+        </div>
+        <div class="feature">
+            <span class="feature-icon">💯</span>
+            <h3>Quality Guarantee</h3>
+            <p>100% money back</p>
+        </div>
+        <div class="feature">
+            <span class="feature-icon">🏆</span>
+            <h3>Best Prices</h3>
+            <p>Affordable rates</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Designed by ABDUL SALMAN KHAN </p>
+    </footer>
+    <script src="cart.js"></script>
+    <script src="payment.js"></script>
+</body>
+</html>
